@@ -1,0 +1,16 @@
+﻿
+<div class="panel-heading">
+        {{pageTitle}}
+</div>
+
+<form [formGroup]="userForm" (submit)="saveUser()">
+  <label for="name">User Name</label>
+  <input formControlName="name" id="name" />
+  <control-messages [control]="userForm.controls.name"></control-messages>
+
+  <label for="password">Password</label>
+  <input formControlName="password" id="password" />
+  <control-messages [control]="userForm.controls.password"></control-messages>
+  
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
