@@ -7,6 +7,7 @@
   // map tells the System loader where to look for things
   var map = {
     'app':                        'app',
+    'unittests':                  'unittests', //added for unittests which are used in karma.config.js
     'rxjs':                       'node_modules/rxjs',
     '@angular':                   'node_modules/@angular'
   };

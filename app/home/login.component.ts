@@ -1,30 +1,38 @@
 import { Component } from '@angular/core';
-import { REACTIVE_FORM_DIRECTIVES, FormBuilder, Validators } from '@angular/forms';
-import { ValidationService } from 'app/validation.service';
+import { REACTIVE_FORM_DIRECTIVES,FORM_DIRECTIVES,FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
     templateUrl: 'app/home/login.component.html',
-    directives: [REACTIVE_FORM_DIRECTIVES]
+    directives: [REACTIVE_FORM_DIRECTIVES,FORM_DIRECTIVES],
+    providers:[FormBuilder]
 
 })
 export class LoginComponent {
     public pageTitle: string = 'Logins';
-
     userForm: any;
-  
-  constructor(private formBuilder: FormBuilder) {
+    submitAttempt:boolean;
+
+  constructor(private formBuilder: FormBuilder,private titleService: Title ) {
       
     this.userForm = this.formBuilder.group({
-      'name': ['', Validators.required],
-      'password': ['', [Validators.required,Validators.minLength(10)]]
+        username: new FormControl('', Validators.required),
+        password:  new FormControl('', Validators.required)
     });
+    this.setTitle(this.pageTitle);
   }
   
-  saveUser() {
+  saveUser(value:any) {
+    this.submitAttempt=true;
     if (this.userForm.dirty && this.userForm.valid) {
-      alert(`Name: ${this.userForm.value.name} Password: ${this.userForm.value.password}`);
+      alert(`Name: ${this.userForm.value.username} Password: ${this.userForm.value.password}`);
+      alert(value);
     }
+  }
+
+   public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
   }
 
 }

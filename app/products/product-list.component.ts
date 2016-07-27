@@ -5,12 +5,14 @@ import { IProduct } from './product';
 import { ProductFilterPipe } from './product-filter.pipe';
 import { StarComponent } from '../shared/star.component';
 import { ProductService } from './product.service';
+import { FORM_DIRECTIVES } from '@angular/common';
 
 @Component({
     templateUrl: 'app/products/product-list.component.html',
     styleUrls: ['app/products/product-list.component.css'],
     pipes: [ProductFilterPipe],
-    directives: [StarComponent, ROUTER_DIRECTIVES]
+    directives: [StarComponent, ROUTER_DIRECTIVES,FORM_DIRECTIVES],
+    providers:[ProductService]
 })
 export class ProductListComponent implements OnInit {
     pageTitle: string = 'Product List';
