@@ -7,10 +7,10 @@
     This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
     It also starts the lite-server and launches the browser to run the application.
 
-4) Type: 'npm test'
+4) Type: `npm test`
     This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
     It also executes the unit tests and stores the test restults.
 
-5) Type: 'npm run e2e'
+5) Type: `npm run e2e`
      This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
     It also executes the e2e tests and stores the test restults.
