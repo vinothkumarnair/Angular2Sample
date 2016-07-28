@@ -11,6 +11,6 @@
     This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
     It also executes the unit tests and stores the test restults.
 
-4) Type: 'npm run e2e'
+5) Type: 'npm run e2e'
      This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
     It also executes the e2e tests and stores the test restults.
